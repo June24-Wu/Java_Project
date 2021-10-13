@@ -1,11 +1,29 @@
 package com.company;
 
-public class String {
-    String input;
-    public String(String input) {
-        this.input = input;
-    }
-    public void reverse() {
+import java.util.Stack;
 
+public class StringReverse {
+    public String reverse(String input){
+        Stack<Character> stack = new Stack<>();
+        for (Character a : input.toCharArray())
+            stack.push(a);
+        StringBuffer reversed = new StringBuffer();
+        while (!stack.empty())
+           reversed.append(stack.pop());
+        return reversed.toString();
+    }
+    public boolean isBalanced(String input){
+        Stack<Character> stack = new Stack<>();
+        for (Character a : input.toCharArray()) {
+            if (a == '(')
+                stack.push(a);
+            if (a == ')'){
+                if (stack.empty()) return false;
+                if (stack.pop() == '('){
+                    continue;}
+                else return false;
+            }
+        }
+        return stack.empty();
     }
 }

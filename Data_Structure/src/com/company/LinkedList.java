@@ -78,4 +78,35 @@ public class LinkedList {
     public boolean isEmpty(){
         return first == null;
     }
+    public void reverse(){
+        if (isEmpty()) throw new NoSuchElementException();
+        var previous = first;
+        var current = first.next;
+        while (current != null) {
+            var next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        last = first;
+        last.next = null;
+        first = previous;
+    }
+    public int getKthFromTheEnd(int k){
+        if (isEmpty()) throw  new NoSuchElementException();
+        if (k< 0)
+            throw new IllegalArgumentException("please enter a numbe that > 0 ");
+        var a = first;
+        var b = first;
+        for(int i=0;i<k-1;i++){
+            b = b.next;
+            if (b == null)
+                throw new IllegalArgumentException("The k is longer than the linked list");
+        }
+        while (b.next != null) {
+            a = a.next;
+            b = b.next;
+        }
+        return a.value;
+    }
 }
