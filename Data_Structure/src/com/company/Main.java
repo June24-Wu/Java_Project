@@ -13,7 +13,7 @@ public class Main {
         binaryTree.add(6);
         binaryTree.add(8);
         binaryTree.add(10);
-        System.out.println(binaryTree.find(8));
+        binaryTree.printNodesAtDistance(4);
 //        System.out.println(linkedlist.indexOf(3));
 //        System.out.println(linkedlist.contains(2));
     }

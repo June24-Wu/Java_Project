@@ -61,4 +61,49 @@ public class BinaryTree {
         return location;
 
     }
+    public void traversePreOrder(){
+        traversePreOrder(root);
+    }
+    private void traversePreOrder(Node root){
+        if (root ==null)
+            return;
+        System.out.println(root.value);
+        traversePreOrder(root.leftChild);
+        traversePreOrder(root.rightChild);
+    }
+
+    public void traverseInOrder(){
+        traverseInOrder(root);
+    }
+    private void traverseInOrder(Node root){
+        if (root ==null)
+            return;
+        traverseInOrder(root.leftChild);
+        System.out.println(root.value);
+        traverseInOrder(root.rightChild);
+    }
+    public int min(){
+        return min(root);
+    }
+    private int min(Node root){
+        if (root.leftChild == null)
+            return root.value;
+        return min(root.leftChild);
+    }
+
+    public void printNodesAtDistance(int distance){
+        printNodesAtDistance(root,distance);
+    }
+    private void printNodesAtDistance(Node root, int distance){
+        if (root == null)
+            return;
+        if (distance == 0) {
+            System.out.println(root.value);
+            return;
+        }
+        printNodesAtDistance(root.leftChild,distance-1);
+        printNodesAtDistance(root.rightChild,distance-1);
+    }
+
+
 }
