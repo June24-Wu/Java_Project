@@ -2,16 +2,15 @@ package com.company;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
-
     public static void main(String[] args) {
-        var tree = new AVLTree();
-        tree.insert(10);
-        tree.insert(20);
-        tree.insert(30);
-//        System.out.println(linkedlist.indexOf(3));
-//        System.out.println(linkedlist.contains(2));
+
+        int[] array = {5,3,8,4,1,2};
+        System.out.println(Heap.getKthBiggestNumber(2,array));
+//        int[] newArray = Heap.heapify(array);
+//        System.out.println(Arrays.toString(newArray));
     }
 
 }
