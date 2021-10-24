@@ -1,4 +1,4 @@
-package com.company;
+package Base_Algorithm;
 
 public class Sqrt {
     public static float BinaraySearch(float value){

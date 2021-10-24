@@ -39,4 +39,20 @@ public class Graph {
                 System.out.println((source + " is connected with " + targets));
         }
     }
+    public void remove(String item){
+        var node = nodes.get(item);
+        if (node == null)
+            return;
+        for (var n: adjancencyList.keySet())
+            adjancencyList.get(n).remove(node);
+        adjancencyList.remove(node);
+        nodes.remove(item);
+    }
+    public void removeEdge(String from,String to){
+        var fromNode = nodes.get(from);
+        var toNode = nodes.get(to);
+        if (fromNode == null || toNode == null)
+            return;
+        adjancencyList.get(fromNode).remove(toNode);
+    }
 }
