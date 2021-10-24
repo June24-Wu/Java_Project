@@ -1,14 +1,11 @@
-package com.company;
+package Base_Algorithm;
 
-import java.util.LinkedList;
+import java.util.Arrays;
 
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-        System.out.println(Sqrt.BinaraySearch(9));
-        System.out.println(Sqrt.newton(9));
-
-
+        System.out.println(FindMaxAverage.find(new int[]{1,12,-5,-6,50,3},4));
+        
     }
 }
