@@ -1,6 +1,6 @@
 package com.company;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -75,4 +75,27 @@ public class Tree {
             inOrderTraverse(root.rightChild);
         return true;
     }
+
+//    深度优先找到最小深度
+    public int minDepth(){return minDepth(root);}
+    private int minDepth(Node root){
+        if (root.leftChild == null && root.rightChild == null)
+            return 1;
+        if (root.leftChild == null)
+            return minDepth(root.rightChild) +1;
+        if (root.rightChild == null)
+            return minDepth(root.leftChild) +1;
+        return Integer.min(minDepth(root.leftChild), minDepth(root.rightChild)) +1;
+    }
+
+//    public int minDepth2(){return minDepth2(root);}
+//    private int minDepth2(Node root){
+//        Queue queue = new LinkedList();
+//        var depth =1;
+//        queue.add(new Array[]{root,depth});
+//        while (queue != null){
+//            var node = queue.poll();
+//
+//        }
+//    }
 }
