@@ -64,11 +64,16 @@ public class CustomString {
     public void setString(String string) {
         if (string == null){
             isSet = false;
-            myString = "";
+            myString = "null";
         }else{
             isSet = true;
             myString = string;
         }
+    }
+
+    @Override
+    public String toString() {
+        return myString.toString();
     }
 
     /**
@@ -89,12 +94,19 @@ public class CustomString {
      * @return new string in which the alphabetical characters specified in the arg are removed
      */
     public String remove(String arg) {
-//         for (int i = 0; i<arg.length(); i++){
-//             if(Character.isLetter(arg.charAt(i)) == true){
-//                 newString = myString.replaceALL(arg.substring(i,i+1),"");
-//             }
-//         }
-        return this.myString.replace(arg,"");
+        HashSet<Character> set = new HashSet<>();
+        for (char i : arg.toCharArray()){
+            if (Character.isLetter(i))
+                set.add(i);
+        }
+        String newString = "";
+        for(int i = 0; i < myString.length();i++){
+            if (set.contains(myString.charAt(i)))
+                continue;
+            else
+                newString += myString.charAt(i);
+        }
+        return newString;
     }
 
     /**

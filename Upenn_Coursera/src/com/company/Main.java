@@ -4,10 +4,10 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        CustomIntegerArrayList a = new CustomIntegerArrayList();
-        a.add(1);
-        System.out.println(a.getArrayList());
-        System.out.println(a.get(0));
+        CustomString string = new CustomString();
+        string.setString("my lucky numbers are 6, 8, and 19.");
+        System.out.println(string.remove("ra6"));
+
 
     }
 }
